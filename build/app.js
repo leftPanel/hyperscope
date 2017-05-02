@@ -181,6 +181,7 @@ var Hyperscope = function () {
       Hyperscope.prototype.request = function request(x, y, element) {
         var _this = this;
 
+        this.cancel();
         this.timeoutHanler = setTimeout(function () {
           scroll(x, y, element, _this.step, _this.interval, function (handler) {
             _this.timeoutHanler = handler;

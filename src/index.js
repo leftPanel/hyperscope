@@ -10,11 +10,12 @@ class Hyperscope {
   }
 
   request(x, y, element) {
+    this.cancel();
     this.timeoutHanler = setTimeout(() => {
       scroll(x, y, element, this.step, this.interval, handler => {
         this.timeoutHanler = handler;
       });
-    }, this.delay)
+    }, this.delay);
   }
 
   cancel() {
