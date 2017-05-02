@@ -167,7 +167,7 @@ var Hyperscope = function () {
     var Hyperscope = function () {
       function Hyperscope() {
         var step = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 10;
-        var interval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 50;
+        var interval = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
         var delay = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 100;
 
         _classCallCheck(this, Hyperscope);
@@ -181,9 +181,9 @@ var Hyperscope = function () {
       Hyperscope.prototype.request = function request(x, y, element) {
         var _this = this;
 
-        setTimeout(function () {
+        this.timeoutHanler = setTimeout(function () {
           scroll(x, y, element, _this.step, _this.interval, function (handler) {
-            return _this.timeoutHanler = handler;
+            _this.timeoutHanler = handler;
           });
         }, this.delay);
       };
