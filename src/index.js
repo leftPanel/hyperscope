@@ -2,7 +2,7 @@ import checkShouldScroll from './checkShouldScroll';
 import getCloestScrollableElement from './getCloestScrollableElement'
 
 class Hyperscope {
-  constructor(step = 10, interval = 50, delay = 100) {
+  constructor(step = 10, interval = 20, delay = 100) {
     this.step = step;
     this.interval = interval;
     this.delay = delay;
